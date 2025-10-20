@@ -4,9 +4,10 @@ using namespace std;
 
 void reverse(vector<int> &arr)
 {
-    for (int i = arr.size(); i > 0; i--)
+    int n = arr.size();
+    for (int i = 0; i < n / 2; i++)
     {
-        cout << i << " ";
+        swap(arr[i], arr[n - 1 - i]);
     }
 }
 int main()
@@ -23,5 +24,9 @@ int main()
         arr.push_back(vl);
     }
     reverse(arr);
+    for (int i = 0; i < arr.size(); i++)
+    {
+        cout << arr[i] << " ";
+    }
     return 0;
 }
