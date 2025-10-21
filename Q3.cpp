@@ -19,4 +19,5 @@ int main()
     vector<int> arr = {10, 5, 4, 3, 48, 6, 2, 33, 53, 10};
     int k = 4;
     cout << kthSmall(arr, k);
+    return 0;
 }
