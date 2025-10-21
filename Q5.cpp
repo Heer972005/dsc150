@@ -15,11 +15,30 @@ vector<int> move(vector<int> &arr)
     }
     return arr;
 }
-
+// using two-pointer
+vector<int> move1(vector<int> &arr)
+{
+    int left = 0, right = arr.size() - 1;
+    while (left < right)
+    {
+        while (left < right && arr[left] < 0)
+            left++;
+        while (right > left && arr[right] > 0)
+            right--;
+        if (right > left)
+        {
+            swap(arr[left], arr[right]);
+            left++;
+            right--;
+        }
+    }
+    return arr;
+}
 int main()
 {
     vector<int> arr = {-12, 11, -13, -5, 6, -7, 5, -3, -6};
     vector<int> ans = move(arr);
+    vector<int> ans1 = move1(arr);
 
     for (auto num : ans)
     {
